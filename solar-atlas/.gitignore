@@ -1,0 +1,4 @@
+node.exe
+*.tar.gz
+*.zip
+.portable/
