@@ -1,5 +1,13 @@
 # Study Hub
 
+## Deploy to Vercel
+
+Import the repository with its root directory set to the repository root (the folder containing `manage.py`). Use the Django framework preset and leave Build Command and Output Directory at their defaults. The `vercel.json` configuration enables Vercel's Django integration, which runs `collectstatic` and serves `/static/` assets automatically.
+
+If an older deployment shows a 500 error with `Missing staticfiles manifest entry`, deploy this updated configuration. The generated `staticfiles/` directory belongs in the build output and should remain ignored by Git.
+
+To check production rendering locally, run `.\.venv\Scripts\python.exe manage.py collectstatic --noinput` before starting the app with `DJANGO_DEBUG=False`.
+
 Study Hub is a Django learning website that includes the standalone Solar System project. The solar-system textures and resources are included locally, so the site does not require a ChatGPT account, installation, or internet connection after setup.
 
 ## Open from VS Code on Windows
