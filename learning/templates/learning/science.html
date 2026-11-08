@@ -1,0 +1,26 @@
+{% extends 'learning/base.html' %}
+{% load static %}
+{% block title %}Science Study | The Solar System{% endblock %}
+{% block content %}
+<main class="page-shell science-page">
+    <a class="back-link" href="{% url 'learning:home' %}">
+        <span aria-hidden="true">&#8592;</span> All subjects
+    </a>
+    <section class="science-layout" aria-labelledby="page-title">
+        <div class="science-copy">
+            <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> SCIENCE STUDY / SPACE</p>
+            <h1 id="page-title">Welcome to<br>our <em>solar system.</em></h1>
+            <p class="science-intro">The Sun and its eight planets make a remarkable place to begin exploring science. Start with a question, and see where it takes you.</p>
+            <div class="solar-note">
+                <span class="note-label">A GOOD PLACE TO BEGIN</span>
+                <p>One star. Eight planets. Countless things to discover.</p>
+            </div>
+            <a class="return-link" href="{% url 'learning:home' %}">Back to Study Hub <span aria-hidden="true">&#8594;</span></a>
+        </div>
+        <figure class="science-image">
+            <img src="{% static 'assets/earth_daymap.jpg' %}" alt="A map of Earth's oceans and continents">
+            <figcaption><span>HOME, IN THE COSMOS</span><span>EARTH / 03</span></figcaption>
+        </figure>
+    </section>
+</main>
+{% endblock %}

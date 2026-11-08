@@ -1,0 +1,56 @@
+{% extends 'learning/base.html' %}
+{% load static %}
+{% block title %}Study Hub | Start exploring{% endblock %}
+{% block content %}
+<main class="page-shell">
+    <section class="hero" aria-labelledby="page-title">
+        <div class="hero-copy">
+            <p class="eyebrow"><span class="eyebrow-mark" aria-hidden="true"></span> YOUR LEARNING STARTS HERE</p>
+            <h1 id="page-title">Make room<br>for <em>wonder.</em></h1>
+            <p class="hero-summary">A calm place to follow your curiosity, one subject at a time.</p>
+            <a class="primary-link" href="{% url 'learning:science' %}">
+                <span>Science Study</span>
+                <span class="link-arrow" aria-hidden="true">&#8599;</span>
+            </a>
+            <a class="solar-explorer-link" href="{% url 'learning:solar_system' %}">
+                <span>Explore the Solar System</span>
+                <span aria-hidden="true">&#8594;</span>
+            </a>
+            <p class="hero-footnote">START WITH THE WORLD AROUND YOU</p>
+        </div>
+        <figure class="hero-image">
+            <img src="{% static 'assets/jupiter.jpg' %}" alt="The cloud bands and storms of Jupiter">
+            <figcaption><span>01 / OUR SOLAR SYSTEM</span><span>JUPITER</span></figcaption>
+        </figure>
+    </section>
+
+    <section class="subjects" aria-labelledby="subjects-title">
+        <div class="section-heading">
+            <div>
+                <p class="eyebrow">PICK UP WHERE CURIOSITY LEADS</p>
+                <h2 id="subjects-title">Your subjects</h2>
+            </div>
+            <span class="subject-count">01 <span>OF 03 READY</span></span>
+        </div>
+        <div class="subject-list">
+            {% for subject in subjects %}
+                {% if subject.available %}
+                    <a class="subject-row" href="{% url 'learning:science' %}">
+                        <span class="subject-number">{{ subject.number }}</span>
+                        <span class="subject-name">{{ subject.name }}</span>
+                        <span class="subject-description">{{ subject.description }}</span>
+                        <span class="row-arrow" aria-hidden="true">&#8594;</span>
+                    </a>
+                {% else %}
+                    <div class="subject-row subject-row--soon" aria-disabled="true">
+                        <span class="subject-number">{{ subject.number }}</span>
+                        <span class="subject-name">{{ subject.name }}</span>
+                        <span class="subject-description">{{ subject.description }}</span>
+                        <span class="coming-soon">SOON</span>
+                    </div>
+                {% endif %}
+            {% endfor %}
+        </div>
+    </section>
+</main>
+{% endblock %}

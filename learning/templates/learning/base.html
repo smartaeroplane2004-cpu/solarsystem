@@ -1,0 +1,27 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#eef3e8">
+    <title>{% block title %}Study Hub{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'learning/styles.css' %}">
+</head>
+<body>
+    <header class="site-header">
+        <a class="brand" href="{% url 'learning:home' %}">
+            <span class="brand-mark" aria-hidden="true">S</span>
+            <span>Study Hub</span>
+        </a>
+        <nav class="site-nav" aria-label="Main navigation">
+            <a class="site-nav-link" href="{% url 'learning:solar_system' %}">
+                <span>Solar System</span>
+                <span aria-hidden="true">&#8599;</span>
+            </a>
+        </nav>
+        <span class="header-note">A place for your next question</span>
+    </header>
+    {% block content %}{% endblock %}
+</body>
+</html>

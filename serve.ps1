@@ -13,7 +13,7 @@ try {
         $context = $listener.GetContext()
         try {
             $relative = [Uri]::UnescapeDataString($context.Request.Url.AbsolutePath).TrimStart('/')
-            if (-not $relative) { $relative = 'index.html' }
+            if (-not $relative) { $relative = 'solar-system.html' }
             $path = [IO.Path]::GetFullPath((Join-Path $root $relative))
             if (-not $path.StartsWith($root + [IO.Path]::DirectorySeparatorChar, [StringComparison]::OrdinalIgnoreCase)) {
                 $context.Response.StatusCode = 403

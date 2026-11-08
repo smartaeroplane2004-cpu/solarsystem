@@ -1,6 +1,6 @@
-# Solar Atlas
+# Study Hub
 
-A standalone HTML, CSS, and JavaScript solar system. All textures are included locally; no ChatGPT account, hosting, installation, or internet connection is required.
+Study Hub is a Django learning website that includes the standalone Solar System project. The solar-system textures and resources are included locally, so the site does not require a ChatGPT account, installation, or internet connection after setup.
 
 ## Open from VS Code on Windows
 
@@ -10,7 +10,7 @@ A standalone HTML, CSS, and JavaScript solar system. All textures are included l
 
 Alternatively, run `powershell -NoProfile -ExecutionPolicy Bypass -File .\serve.ps1` from this folder. To choose another port, add `-Port 8081`.
 
-Edit `solar-atlas/dist/index.html`, `app.js`, or the CSS files and refresh the browser to see changes. Use the local server instead of double-clicking the HTML because the planet renderer reads texture pixels using canvas.
+Edit `solar-atlas/dist/solar-system.html`, `app.js`, or the CSS files and refresh the browser to see changes. Use the local server instead of double-clicking the HTML because the planet renderer reads texture pixels using canvas.
 
 Features: all eight planets, rotating textured close-ups, planet facts, previous/next navigation, an animated orbital overview, a navigation map, pause controls, ambient music and volume control, and responsive layouts.
 
